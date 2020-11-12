@@ -1,33 +1,6 @@
 
-INSERT INTO PROJECT_CATALOG_FACT
- (PROJECT_ID,PROJECT_TITLE,INTAKE_SUMMARY,PROJECT_ADVANTAGE,TITLE_ABBREVIATION,PROJECT_TYPE,PURPOSE_STATEMENT,PROJECT_SIZE,PROJECT_STATUS,DEPARTMENT,DIVISION,
-SPONSOR,PMO,PMO_DIRECTOR,PROJECT_MANAGER,PRIMARY_VENDOR,IV_AND_V_VENDOR,FEDERAL_FUNDING_PARTNER,STAGE_GATE,"START_DATE",DEADLINE_DATE,AGENCY_PRIORITY  
-,DIVISION_PRIORITY,DEPENDENCY_ON_PRIMARY_PROJECT,FUND_TYPE,FUND_SPLIT,EST_BUDGET,EST_BUS_RSCS,EST_TECH_RSCS,EST_VEN_RSCS,TOTAL_RSCS,SUPPORT_STAGE_STRATEGIC_GOAL,SUPPORT_AGENCY_STRATEGIC_GOAL
-,SUPPORT_DIVISION_STRATEGIC_GOAL,PRIMARY_BUSINESS_BENEFIT,INVESTMENT_TRANSFORMATION_BENEFIT,QUANTITATIVE_BENEFIT,QUALITATIVE_BENEFIT,BENEFIT_OWNER,COMPLEXITY,BENEFIT,MANDATORY_OVERRIDE  
- ,SCHEDULE,SCOPE,FINANCE,HUMAN_RESOURCES,"CONTRACT",IV_AND_V,SPONSOR_TITLE,ID_OF_STAFF,FTE,PERCENTAGE_COMPLETE,PERCENTAGE_SPENT  
- ,APD_NUMBER,STATUS_SUMMARY,STATUS_GATE)
 
-VALUES
-('PR1','MES - Project Management Office','','','PMO','K - Other','To provide PMO Services for the MES Program.','Medium','','AMA - Alabama Medicaid Agency','IT',
-'Mason Tanaka','MES','TJ Nola','David Skillman','','','If the project is in part funded by a federal partner,  name the entity here','2-In Process','2020-04-01','2024-03-30','',
-'','','','',9500000,8,8,14,30,'','','','','','','','',5,5,''
-,'Green','Green','Yellow','Yellow','N/A','N/A','Chief Information Officer',30,15,0.25,0.25,'APD # here','PMO-Just getting started, from the DataSet-Catalog+','2-In Process'),
-
-('PR2','MES - Organizational Change Management','','','OCM','K - Other','To provide OCM Services for the MES Program.','Medium','','AMA - Alabama Medicaid Agency','IT','Mason Tanaka','MES',
-'TJ Nola','David Skillman','','','If the project is in part funded by a federal partner,  name the entity here','2-In Process','2020-04-01','2024-03-30','','','','','',3000000,3,0,0,3,'',
-'','','','','','','',3,4,'',
-'Green','Green','Yellow','Green','N/A','N/A','Chief Information Officer',3,3,0.1,0.08,'APD # here','OCM-Just getting started, from the DataSet-Catalog+','2-In Process');
-
-
-
-select * from PROJECT_CATALOG_FACT;
-
-
-
-(PORTFOLIO_ID,PORTFOLIO_DESCRIPTION,PORTFOLIO_NOTES,LEADERSHIP,STATUS_SUMMARY)
-
-
-TRUNCATE TABLE [dbo].[ACTIVITY_DIMENSION];
+/*TRUNCATE TABLE [dbo].[ACTIVITY_DIMENSION];
 TRUNCATE TABLE [dbo].[ISSUES_DIMENSION];
 TRUNCATE TABLE [dbo].[PORTFOLIO_DIMENSION];
 TRUNCATE TABLE [dbo].[PROGRAM_DIMENSION];
@@ -35,13 +8,56 @@ TRUNCATE TABLE [dbo].[PROJECT_DIMENSION];
 TRUNCATE TABLE [dbo].[RISKS_DIMENSION];
 TRUNCATE TABLE [dbo].[STRATEGY_DIMENSION];
 TRUNCATE TABLE [dbo].[VENDOR_DIMENSION];
-TRUNCATE TABLE [dbo].[PROJECT_CATALOG_FACT];
+TRUNCATE TABLE [dbo].[PROJECT_CATALOG_FACT];*/
 
 
-insert into PORTFOLIO_DIMENSION (PORTFOLIO_ID,PORTFOLIO_DESCRIPTION,PORTFOLIO_NOTES,LEADERSHIP,STATUS_SUMMARY,CREATED_DATE,BATCH_ID)
-values
-('Pf1','AMA','Alabama Medicaid Agency','Mason Tanaka','AMA is AOK.',GETDATE(),9999);
-select * from PORTFOLIO_DIMENSION;
+select * from  [dbo].[ACTIVITY_DIMENSION];
+select * from  [dbo].[ISSUES_DIMENSION];
+select * from  [dbo].[PORTFOLIO_DIMENSION];
+select * from  [dbo].[PROGRAM_DIMENSION];
+select * from  [dbo].[PROJECT_DIMENSION];
+select * from  [dbo].[RISKS_DIMENSION];
+select * from  [dbo].[STRATEGY_DIMENSION];
+select * from  [dbo].[VENDOR_DIMENSION];
+select * from  [dbo].[PROJECT_CATALOG_FACT];
+
+select  'ACTIVITY_DIMENSION',count(*) from  [dbo].[ACTIVITY_DIMENSION]
+union
+select 'ISSUES_DIMENSION',count(*) from  [dbo].[ISSUES_DIMENSION]
+union
+select 'PORTFOLIO_DIMENSION',count(*) from  [dbo].[PORTFOLIO_DIMENSION]
+union
+select 'PROGRAM_DIMENSION',count(*) from  [dbo].[PROGRAM_DIMENSION]
+union
+select 'PROJECT_DIMENSION',count(*) from  [dbo].[PROJECT_DIMENSION]
+union
+select 'RISKS_DIMENSION',count(*) from  [dbo].[RISKS_DIMENSION]
+union
+select 'STRATEGY_DIMENSION',count(*) from  [dbo].[STRATEGY_DIMENSION]
+union
+select 'VENDOR_DIMENSION',count(*) from  [dbo].[VENDOR_DIMENSION]
+union
+select 'PROJECT_CATALOG_FACT',count(*) from  [dbo].[PROJECT_CATALOG_FACT];
+
+
+INSERT INTO PROJECT_CATALOG_FACT
+ (PROJECT_ID,PROJECT_TITLE,INTAKE_SUMMARY,PROJECT_ADVANTAGE,TITLE_ABBREVIATION,PROJECT_TYPE,PURPOSE_STATEMENT,PROJECT_SIZE,PROJECT_STATUS,DEPARTMENT,DIVISION,
+SPONSOR,PMO,PMO_DIRECTOR,PROJECT_MANAGER,PRIMARY_VENDOR,IV_AND_V_VENDOR,FEDERAL_FUNDING_PARTNER,STAGE_GATE,"START_DATE",DEADLINE_DATE,AGENCY_PRIORITY  
+,DIVISION_PRIORITY,DEPENDENCY_ON_PRIMARY_PROJECT,FUND_TYPE,FUND_SPLIT,EST_BUDGET,EST_BUS_RSCS,EST_TECH_RSCS,EST_VEN_RSCS,TOTAL_RSCS,SUPPORT_STAGE_STRATEGIC_GOAL,SUPPORT_AGENCY_STRATEGIC_GOAL
+,SUPPORT_DIVISION_STRATEGIC_GOAL,PRIMARY_BUSINESS_BENEFIT,INVESTMENT_TRANSFORMATION_BENEFIT,QUANTITATIVE_BENEFIT,QUALITATIVE_BENEFIT,BENEFIT_OWNER,COMPLEXITY,BENEFIT,MANDATORY_OVERRIDE  
+ ,SCHEDULE,SCOPE,FINANCE,HUMAN_RESOURCES,"CONTRACT",IV_AND_V,SPONSOR_TITLE,ID_OF_STAFF,FTE,PERCENTAGE_COMPLETE,PERCENTAGE_SPENT  
+ ,APD_NUMBER,STATUS_SUMMARY,STATUS_GATE)
+VALUES
+('PR1','MES - Project Management Office','','','PMO','K - Other','To provide PMO Services for the MES Program.','Medium','','AMA - Alabama Medicaid Agency','IT',
+'Mason Tanaka','MES','TJ Nola','David Skillman','','','If the project is in part funded by a federal partner,  name the entity here','2-In Process','2020-04-01','2024-03-30','',
+'','','','',9500000,8,8,14,30,'','','','','','','','',5,5,''
+,'Green','Green','Yellow','Yellow','N/A','N/A','Chief Information Officer',30,15,0.25,0.25,'APD # here','PMO-Just getting started, from the DataSet-Catalog+','2-In Process'),
+('PR2','MES - Organizational Change Management','','','OCM','K - Other','To provide OCM Services for the MES Program.','Medium','','AMA - Alabama Medicaid Agency','IT','Mason Tanaka','MES',
+'TJ Nola','David Skillman','','','If the project is in part funded by a federal partner,  name the entity here','2-In Process','2020-04-01','2024-03-30','','','','','',3000000,3,0,0,3,'',
+'','','','','','','',3,4,'',
+'Green','Green','Yellow','Green','N/A','N/A','Chief Information Officer',3,3,0.1,0.08,'APD # here','OCM-Just getting started, from the DataSet-Catalog+','2-In Process');
+
+
 
 insert into PROGRAM_DIMENSION
 (
@@ -50,12 +66,17 @@ PROGRAM_ID,"PROGRAM_NAME",PROGRAM_NOTES,PROGRAM_STATUS_SUMMARY
 PROGRAM_STATUS,DEPARTMENT,DIVISION,SPONSOR,PMO,PMO_DIRECTOR,PRIMARY_VENDOR
 ,IV_AND_V_VENDOR,FEDERAL_FUNDING_PARTNER,SCHEDULE_1,SCOPE,FINANCE,HUMAN_RESOURCES,"CONTRACT"
 ,IV_AND_V,SPONSOR_TITLE,APD_NUMBER,CREATED_DATE,BATCH_ID)
-
-	  VALUES
+ VALUES
 ('Pg1','Program - MES ','MES Program Notes','The MES Program is working to expand the vendor list and is focusing on identifying additional vendors.'
 ,'Yes','No','MES','Other','To algin ALA MMIS to CMS Modularity expectations','Large'
 ,'Green','MES','IT','Mason Tanaka','MES','Shannon Crane','NTT Data',
 'IV&V vendor','','Green','Green','Green','Green','N/A','N/A','Director','APD # here',GETDATE(),9999);
+
+
+insert into PORTFOLIO_DIMENSION (PORTFOLIO_ID,PORTFOLIO_DESCRIPTION,PORTFOLIO_NOTES,LEADERSHIP,STATUS_SUMMARY,CREATED_DATE,BATCH_ID)
+values
+('Pf1','AMA','Alabama Medicaid Agency','Mason Tanaka','AMA is AOK.',GETDATE(),9999);
+select * from PORTFOLIO_DIMENSION;
 
 INSERT INTO PROJECT_DIMENSION
 (PROJECT_ID,PROJECT_NAME,PROGRAM_ID,"PROGRAM_NAME",PORTFOLIO_ID,PORTFOLIO_NAME,CREATED_DATE,BATCH_ID)
