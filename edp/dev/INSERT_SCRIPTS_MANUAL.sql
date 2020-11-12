@@ -21,23 +21,23 @@ select * from  [dbo].[STRATEGY_DIMENSION];
 select * from  [dbo].[VENDOR_DIMENSION];
 select * from  [dbo].[PROJECT_CATALOG_FACT];
 
-select  'ACTIVITY_DIMENSION',count(*) from  [dbo].[ACTIVITY_DIMENSION]
+select  'ACTIVITY_DIMENSION' table_name,count(*) row_Count from  [dbo].[ACTIVITY_DIMENSION]
 union
-select 'ISSUES_DIMENSION',count(*) from  [dbo].[ISSUES_DIMENSION]
+select 'ISSUES_DIMENSION' table_name,count(*) row_Count from  [dbo].[ISSUES_DIMENSION]
 union
-select 'PORTFOLIO_DIMENSION',count(*) from  [dbo].[PORTFOLIO_DIMENSION]
+select 'PORTFOLIO_DIMENSION' table_name,count(*) row_Count from  [dbo].[PORTFOLIO_DIMENSION]
 union
-select 'PROGRAM_DIMENSION',count(*) from  [dbo].[PROGRAM_DIMENSION]
+select 'PROGRAM_DIMENSION' table_name,count(*) row_Count from  [dbo].[PROGRAM_DIMENSION]
 union
-select 'PROJECT_DIMENSION',count(*) from  [dbo].[PROJECT_DIMENSION]
+select 'PROJECT_DIMENSION' table_name,count(*) row_Count from  [dbo].[PROJECT_DIMENSION]
 union
-select 'RISKS_DIMENSION',count(*) from  [dbo].[RISKS_DIMENSION]
+select 'RISKS_DIMENSION' table_name,count(*) row_Count from  [dbo].[RISKS_DIMENSION]
 union
-select 'STRATEGY_DIMENSION',count(*) from  [dbo].[STRATEGY_DIMENSION]
+select 'STRATEGY_DIMENSION' table_name,count(*) row_Count from  [dbo].[STRATEGY_DIMENSION]
 union
-select 'VENDOR_DIMENSION',count(*) from  [dbo].[VENDOR_DIMENSION]
+select 'VENDOR_DIMENSION' table_name,count(*) row_Count from  [dbo].[VENDOR_DIMENSION]
 union
-select 'PROJECT_CATALOG_FACT',count(*) from  [dbo].[PROJECT_CATALOG_FACT];
+select 'PROJECT_CATALOG_FACT' table_name,count(*) row_Count from  [dbo].[PROJECT_CATALOG_FACT];
 
 
 INSERT INTO PROJECT_CATALOG_FACT
