@@ -205,7 +205,30 @@ CREATE TABLE  ACTIVITY  (
     CREATED_DATE  datetime NULL DEFAULT NULL,
     BATCH_ID  int DEFAULT NULL
  ) ;
- 
+
+
+CREATE TABLE [dbo].[PROJECT_CATALOG_PLUS](
+	[PROJECT_ID] [varchar](100) NULL,
+	[PROJECT_TITLE] [varchar](100) NULL,
+	[SCHEDULE] [varchar](100) NULL,
+	[SCOPE] [varchar](100) NULL,
+	[FINANCE] [varchar](200) NULL,
+	[HUMAN_RESOURCES] [varchar](100) NULL,
+	[CONTRACT] [varchar](300) NULL,
+	[IV_V] [varchar](100) NULL,
+	[SPONSOR_TITLE] [varchar](100) NULL,
+	[NO_OF_STAFF] [varchar](100) NULL,
+	[FTE] [int] NULL,
+	[PERCENT_COMPLETE] [decimal](2, 2) NULL,
+	[PERCENT_SPENT] [decimal](2, 2) NULL,
+	[APD_NUMBER] [varchar](100) NULL,
+	[STATUS_SUMMARY] [varchar](100) NULL,
+	[STATUS_GATE] [varchar](100) NULL,
+	[CREATED_DATE] [datetime] NULL,
+	[UPDATED_DATE] [datetime] NULL,
+	[BATCH_ID] [int] NULL
+) ;
+
  CREATE TABLE  PROJECT_CATALOG_FACT  (
     PROJECT_ID  varchar(100) DEFAULT NULL,
     PROJECT_TITLE  varchar(100) DEFAULT NULL,
