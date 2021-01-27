@@ -1,0 +1,29 @@
+/****** Object:  StoredProcedure [dbo].[SP_STAGING_EDITS]    Script Date: 1/27/2021 8:52:18 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE [dbo].[SP_STAGING_EDITS](@SrcTable  varchar(MAX),@SrcColumn varchar(16))
+AS
+BEGIN
+DECLARE @Query3 NVARCHAR(500);
+DECLARE @Query1 NVARCHAR(500);
+DECLARE @Query2 NVARCHAR(500);
+
+    -- SET NOCOUNT ON added to prevent extra result sets from
+    -- interfering with SELECT statements.
+    --SET NOCOUNT ON
+
+    -- Insert statements for procedure here
+  set @Query3	= N'DELETE FROM '+@SrcTable+' WHERE '+@SrcColumn+' IS NULL;'
+  set @Query1	= N'UPDATE '+@SrcTable+' SET CREATED_DATE = GETDATE(),BATCH_ID = Case when (SELECT MAX(BATCH_ID) from '+@SrcTable+') is null then 1 else (SELECT MAX(BATCH_ID) from '+@SrcTable+')+1 End  where CREATED_DATE IS NULL;' 
+  SET @Query2	= N'select * from '+@SrcTable+' where 1=2;' 
+ Exec (@Query3)
+ Exec (@Query1)
+ Exec (@Query2)
+
+END
+GO
+
