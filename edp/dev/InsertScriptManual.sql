@@ -45,17 +45,17 @@ INSERT INTO PROJECT_CATALOG_FACT
 SPONSOR,PMO,PMO_DIRECTOR,PROJECT_MANAGER,PRIMARY_VENDOR,IV_AND_V_VENDOR,FEDERAL_FUNDING_PARTNER,STAGE_GATE,"START_DATE",DEADLINE_DATE,AGENCY_PRIORITY  
 ,DIVISION_PRIORITY,DEPENDENCY_ON_PRIMARY_PROJECT,FUND_TYPE,FUND_SPLIT,EST_BUDGET,EST_BUS_RSCS,EST_TECH_RSCS,EST_VEN_RSCS,TOTAL_RSCS,SUPPORT_STAGE_STRATEGIC_GOAL,SUPPORT_AGENCY_STRATEGIC_GOAL
 ,SUPPORT_DIVISION_STRATEGIC_GOAL,PRIMARY_BUSINESS_BENEFIT,INVESTMENT_TRANSFORMATION_BENEFIT,QUANTITATIVE_BENEFIT,QUALITATIVE_BENEFIT,BENEFIT_OWNER,COMPLEXITY,BENEFIT,MANDATORY_OVERRIDE  
- ,SCHEDULE,SCOPE,FINANCE,HUMAN_RESOURCES,"CONTRACT",IV_AND_V,SPONSOR_TITLE,ID_OF_STAFF,FTE,PERCENTAGE_COMPLETE,PERCENTAGE_SPENT  
- ,APD_NUMBER,STATUS_SUMMARY,STATUS_GATE)
+ ,SCHEDULE,SCOPE,FINANCE,HUMAN_RESOURCES,"CONTRACT",IV_AND_V,SPONSOR_TITLE,FTE,PERCENTAGE_COMPLETE,PERCENTAGE_SPENT  
+ ,APD_NUMBER,STATUS_SUMMARY,STATUS_GATE,HEALTHCARE,KNOWLEDGE_INNOVATION,HEALTH_SAFETY_WELLBEING,[EFFICIENT_TRANSPARENCY_ACCOUNTABILITY] ,run_business,GROW_BUSINESS,TRANSFORM_BUSINESS)
 VALUES
 ('PR1','MES - Project Management Office','','','PMO','K - Other','To provide PMO Services for the MES Program.','Medium','','AMA - Alabama Medicaid Agency','IT',
 'Mason Tanaka','MES','TJ Nola','David Skillman','','','If the project is in part funded by a federal partner,  name the entity here','2-In Process','2020-04-01','2024-03-30','',
 '','','','',9500000,8,8,14,30,'','','','','','','','',5,5,''
-,'Green','Green','Yellow','Yellow','N/A','N/A','Chief Information Officer',30,15,0.25,0.25,'APD # here','PMO-Just getting started, from the DataSet-Catalog+','2-In Process'),
+,'Green','Green','Yellow','Yellow','N/A','N/A','Chief Information Officer',15,0.25,0.25,'APD # here','PMO-Just getting started, from the DataSet-Catalog+','2-In Process',0.25,0.50,0,0.25,0.25,0,0.75),
 ('PR2','MES - Organizational Change Management','','','OCM','K - Other','To provide OCM Services for the MES Program.','Medium','','AMA - Alabama Medicaid Agency','IT','Mason Tanaka','MES',
 'TJ Nola','David Skillman','','','If the project is in part funded by a federal partner,  name the entity here','2-In Process','2020-04-01','2024-03-30','','','','','',3000000,3,0,0,3,'',
 '','','','','','','',3,4,'',
-'Green','Green','Yellow','Green','N/A','N/A','Chief Information Officer',3,3,0.1,0.08,'APD # here','OCM-Just getting started, from the DataSet-Catalog+','2-In Process');
+'Green','Green','Yellow','Green','N/A','N/A','Chief Information Officer',3,0.1,0.08,'APD # here','OCM-Just getting started, from the DataSet-Catalog+','2-In Process',0.25,0.25,0,0.50,0.25,0,0.75);
 
 
 
@@ -123,11 +123,6 @@ VALUES
 ('Pr2','Pr2-1','OCM-Client condensed time line.  Project is now due on 7/22/2020, which is two weeks earlier than originally planned.','Red','Increase resources assigned to project.','2021-05-02',GETDATE(),9999),
 ('Pr2','Pr2-2','OCM-JIRA testers were re-assigned to a project with higher visibility.','Yellow','On-board testers from a lower priority project. ','2022-02-01',GETDATE(),9999);
 
-INSERT INTO STRATEGY_DIMENSION
-(PROJECT_ID,HEALTHCARE,KNOWLEDGE_INNOVATION,HEALTH_SAFETY_WELLBEING,EFFICIENT_TRANSPERENCY_ACCOUNTABILITY,RUN_BUSINESS,GROW_BUSINESS,TRANSFORM_BUSINESS,CREATED_DATE,BATCH_ID)
-VALUES
-('PR1',0.25,0.5,0,0.25,0.25,0,0.75,GETDATE(),9999),
-('PR2',0.25,0.25,0,0.5,0.25,0,0.75,GETDATE(),9999);
 
 INSERT INTO VENDOR_DIMENSION 
 (PROJECT_ID,VENDOR,CREATED_DATE,BATCH_ID)
