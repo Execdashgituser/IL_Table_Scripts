@@ -1,0 +1,85 @@
+/****** Object:  Table [dbo].[RISKS]    Script Date: 2/8/2021 8:08:18 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+drop table [RISKS];
+CREATE TABLE [dbo].[RISKS](
+	[PROJECT_ID] [varchar](100) NULL,
+	[RISK_ID] [varchar](100) NULL,
+	[RISK_EVENT] [varchar](2000) NULL,
+	[RISK_CONSEQUENCE] [varchar](100) NULL,
+	[RESPONSE_PLAN] [varchar](2000) NULL,
+	[PROBABILITY] [int] NULL,
+	[SEVERITY_COLOR_INDICATOR] [varchar](100) NULL,
+	[IMPACT] [int] NULL,
+	[CALCULATED_SEVERITY] [varchar](100) NULL,
+	[BATCH_ID] [int] NULL,
+	[CREATED_DATE] [datetime] NULL
+) ON [PRIMARY]
+GO
+
+
+drop table [RISKS_DIMENSION];
+CREATE TABLE [dbo].[RISKS_DIMENSION](
+	[PROJECT_ID] [varchar](100) NULL,
+	[RISK_ID] [varchar](100) NULL,
+	[RISK_EVENT] [varchar](2000) NULL,
+	[RISK_CONSEQUENCE] [varchar](100) NULL,
+	[RESPONSE_PLAN] [varchar](2000) NULL,
+	[PROBABILITY] [int] NULL,
+	[SEVERITY_COLOR_INDICATOR] [varchar](100) NULL,
+	[IMPACT] [int] NULL,
+	[CALCULATED_SEVERITY] [int] NULL,
+	[CREATED_DATE] [datetime] NULL,
+	[UPDATED_DATE] [datetime] NULL,
+	[BATCH_ID] [int] NULL
+) ON [PRIMARY]
+GO
+
+
+
+/****** Object:  Table [dbo].[ISSUES]    Script Date: 2/8/2021 8:10:52 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+drop table [ISSUES];
+CREATE TABLE [dbo].[ISSUES](
+	[PROJECT_ID] [varchar](10) NULL,
+	[ISSUE_ID] [varchar](10) NULL,
+	[ISSUE_DESCRIPTION] [varchar](500) NULL,
+	[CRITICALITY] [varchar](100) NULL,
+	[CRITICALITY_NUM] [int] NULL,
+	[RESOLUTION] [varchar](2000) NULL,
+	[RESOLUTION_DUE_DATE] [date] NULL,
+	[IS_DUE_NXT_6MON] [int] NULL,
+	[BATCH_ID] [int] NULL,
+	[CREATED_DATE] [datetime] NULL
+) ON [PRIMARY]
+GO
+
+/****** Object:  Table [dbo].[ISSUES_DIMENSION]    Script Date: 2/8/2021 8:12:36 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+drop table [ISSUES_DIMENSION];
+CREATE TABLE [dbo].[ISSUES_DIMENSION](
+	[PROJECT_ID] [varchar](100) NULL,
+	[ISSUE_ID] [varchar](100) NULL,
+	[ISSUE_DESCRIPTION] [varchar](500) NULL,
+	[CRITICALITY_NUM] [int] NULL,
+	[CRITICALITY] [varchar](100) NULL,
+	[RESOLUTION] [varchar](500) NULL,
+	[RESOLUTION_DUE_DATE] [date] NULL,
+	[IS_DUE_NXT_6MON] [int] NULL,
+	[CREATED_DATE] [datetime] NULL,
+	[UPDATED_DATE] [datetime] NULL,
+	[BATCH_ID] [int] NULL
+) ON [PRIMARY]
+GO
+
